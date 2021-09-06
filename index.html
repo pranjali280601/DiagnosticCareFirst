@@ -64,8 +64,24 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       </div>
     </div>
 
+    <script>
+      var myIndex = 0;
+      carousel();
+      
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+      }
+      </script>
     <!-- Slideshow next/previous buttons -->
-    <div class="w3-container w3-black w3-padding w3-xlarge">
+    <!-- <div class="w3-container w3-black w3-padding w3-xlarge">
       <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
       <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
     
@@ -75,7 +91,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
       </div>
     </div>
-  </div>
+  </div> -->
   
   <!-- Grid -->
 
